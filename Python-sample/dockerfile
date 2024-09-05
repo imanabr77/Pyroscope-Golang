@@ -1,0 +1,16 @@
+FROM python:latest
+
+WORKDIR /usr/src/app
+
+#RUN adduser --disabled-password --gecos --quiet pyroscope
+#USER pyroscope
+USER root
+
+RUN python -m pip install --upgrade pip
+COPY main.py ./main.py
+
+RUN pip install pyroscope-io
+
+#ENV PYROSCOPE_SERVER_ADDRESS=pyroscope:4040
+
+CMD ["python", "main.py"]

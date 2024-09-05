@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  pyroscope:
+    image: grafana/pyroscope:latest
+    container_name: pyroscope
+    ports:
+    - "4040:4040"
+    networks:
+    - pyroscope-demo
+    environment:
+    - PYROSCOPE_SERVER_ADDRESS=pyroscope:4040
+  
+  # pyroscope-python-example:
+  #   build: .
+  #   container_name: pyroscope-python
+  #   ports:
+  #   - "8080:8080"
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+    - "3000:3000"
+    volumes:
+    - ./grafana-data:/var/lib/grafana
+    depends_on:
+    - pyroscope
+    networks:
+    - pyroscope-demo
+    environment:
+    - GF_INSTALL_PLUGINS=grafana-pyroscope-app
+    - GF_AUTH_ANONYMOUS_ENABLED=true
+    - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+    - GF_AUTH_DISABLE_LOGIN_FORM=true
+
+networks:
+  pyroscope-demo:
