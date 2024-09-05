@@ -28,4 +28,5 @@
     ./main.py
     ```
 
-    
+    <img width="1784" alt="image" src="https://github.com/user-attachments/assets/00eb1a08-5636-4e52-a22c-bd9904221799">
+
