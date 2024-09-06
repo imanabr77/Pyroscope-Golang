@@ -4,7 +4,7 @@
  Pyroscope is a powerful open-source profiling tool that helps developers identify and optimize application performance bottlenecks. This presentation will provide an in-depth look at Pyroscope's benefits, architecture, and practical usage for profiling and improving application performance.
 
 
- This project was prepared for the use and testing of Pyroscope, implemented using two programming languages, Go and Python.
+ This project was prepared for using and testing Pyroscope, implemented using two programming languages: Go and Python.
 
 
 ## Setup 
@@ -22,7 +22,7 @@
     go run main.go
 
 
-    Python
+    Python:
     cd Python-sample
     pip3 install pyroscope-io==0.8.5
     ./main.py
