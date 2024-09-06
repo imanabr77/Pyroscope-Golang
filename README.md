@@ -22,7 +22,7 @@
     go run main.go
 
 
-    Python:
+    Python :
     cd Python-sample
     pip3 install pyroscope-io==0.8.5
     ./main.py
